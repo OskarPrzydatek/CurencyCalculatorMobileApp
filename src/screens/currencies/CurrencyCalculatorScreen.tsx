@@ -1,7 +1,7 @@
 import React from 'react';
-import {ScreenLayout} from '../../layouts';
 import {Button, Text} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
+import { ScreenLayout } from '../../layouts';
 
 export const CurrencyCalculatorScreen: React.FC = () => {
   const navigation = useNavigation<any>();

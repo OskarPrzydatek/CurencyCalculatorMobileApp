@@ -5,9 +5,9 @@ const styles = StyleSheet.create({
 });
 
 export const DolarIcon = () => (
-  <Image source={require('../assets/dolar.png')} style={styles.icon} />
+  <Image source={require('../pictures/dolar.png')} style={styles.icon} />
 );
 
 export const GoldBarIcon = () => (
-  <Image source={require('../assets/gold.png')} style={styles.icon} />
+  <Image source={require('../pictures/gold.png')} style={styles.icon} />
 );

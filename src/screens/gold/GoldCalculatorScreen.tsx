@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {ScreenLayout} from '../../layouts';
 import {Button, Text} from 'react-native-paper';
+import { ScreenLayout } from '../../layouts';
 
 export const GoldCalculatorScreen: React.FC = () => {
   const navigation = useNavigation<any>();

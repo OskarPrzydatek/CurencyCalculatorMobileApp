@@ -1,6 +1,6 @@
 import React from 'react';
-import {ScreenLayout} from '../../layouts';
 import {Text} from 'react-native-paper';
+import { ScreenLayout } from '../../layouts';
 
 export const SingleCurrencyScreen: React.FC = () => {
   return (

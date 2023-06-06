@@ -5,8 +5,8 @@ import {
 } from 'react-native-paper';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {CurrencyRoot, GoldRoot} from './roots';
-import {DolarIcon, GoldBarIcon} from './icons';
+import {CurrencyRoot, GoldRoot} from './src/roots';
+import {DolarIcon, GoldBarIcon} from './src/assets/icons';
 
 const Tab = createBottomTabNavigator();
 
