@@ -16,12 +16,13 @@ const App: React.FC = () => {
       <PaperProvider>
         <Tab.Navigator
           screenOptions={{
+            tabBarHideOnKeyboard: true,
           }}>
           <Tab.Screen
             name="CurrencyRoot"
             component={CurrencyRoot}
             options={{
-              title: 'Currencies',
+              title: 'Waluty',
               headerShown: false,
               tabBarIcon: DolarIcon,
               tabBarActiveTintColor: DefaultTheme.colors.secondary,
@@ -32,7 +33,7 @@ const App: React.FC = () => {
             name="GoldRoot"
             component={GoldRoot}
             options={{
-              title: 'Gold',
+              title: 'Złoto',
               headerShown: false,
               tabBarIcon: GoldBarIcon,
               tabBarActiveTintColor: DefaultTheme.colors.secondary,
