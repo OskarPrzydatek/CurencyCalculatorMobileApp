@@ -40,7 +40,8 @@ export const CurrencySelectScreen: React.FC = () => {
     navigation.goBack();
   };
 
-  // Render item from data as button
+  // Render item from data as button for
+  // select currency for calculator
   const renderItem: ListRenderItem<ICurrency> = ({item}) => (
     <Button onPress={() => onPressSelectCurrency(item)}>
       {item.currency.toUpperCase()} - {item.code}
