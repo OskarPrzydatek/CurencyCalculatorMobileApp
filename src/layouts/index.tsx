@@ -10,13 +10,7 @@ import {NativeStackHeaderProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {ActivityIndicator, Appbar, Text} from 'react-native-paper';
-
-// ScreenLayout props interface
-interface IScreenLayout {
-  isLoading?: boolean;
-  error?: boolean;
-  children: React.ReactNode;
-}
+import {IScreenLayout} from '../models';
 
 /**
  *
@@ -71,12 +65,8 @@ export const CustomNavigationBar: React.FC<NativeStackHeaderProps> = ({
   );
 };
 
-/**
- *
- * CSS-in-JS styles object created by using ReactNative API
- * to style all layouts
- *
- */
+// CSS-in-JS styles object created by using ReactNative API
+// to style all layouts
 const styles = StyleSheet.create({
   loadingLayout: {
     flex: 1,
@@ -93,6 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     gap: 15,
+    paddingHorizontal: '5%',
   },
   navigationBar: {
     backgroundColor: 'transparent',

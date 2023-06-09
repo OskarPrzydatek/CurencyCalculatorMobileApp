@@ -2,7 +2,11 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {CurrencyCalculatorScreen} from '../screens/currencies/CurrencyCalculatorScreen';
 import {CurrenciesListScreen} from '../screens/currencies/CurrenciesListScreen';
 import {SingleCurrencyScreen} from '../screens/currencies/SingleCurrencyScreen';
-import {GoldAnalizeScreen, GoldCalculatorScreen} from '../screens';
+import {
+  CurrencySelectScreen,
+  GoldAnalizeScreen,
+  GoldCalculatorScreen,
+} from '../screens';
 import {CustomNavigationBar} from '../layouts';
 
 const CurrencyStack = createNativeStackNavigator();
@@ -17,6 +21,10 @@ export const CurrencyRoot: React.FC = () => {
       <CurrencyStack.Screen
         name="CurrencyCalculator"
         component={CurrencyCalculatorScreen}
+      />
+      <CurrencyStack.Screen
+        name="CurrencySelect"
+        component={CurrencySelectScreen}
       />
       <CurrencyStack.Screen
         name="CurrenciesList"
