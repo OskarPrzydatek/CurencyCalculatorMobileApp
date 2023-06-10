@@ -24,15 +24,16 @@ export const CurrenciesListScreen: React.FC = () => {
   );
 
   // Function for navigate to SingleCurrency screen
-  const onPressNavigateToSingleCurrency = () =>
-    navigation.navigate('SingleCurrency');
+  // and pasing currency code by param prop
+  const onPressNavigateToSingleCurrency = (code: string) =>
+    navigation.navigate('SingleCurrency', { code: code});
 
   // Render item from data as button for
   // navigate to SingleCurrency screen
   const renderItem: ListRenderItem<ICurrency> = ({item}) => (
     <Button
       style={styles.currencyItem}
-      onPress={onPressNavigateToSingleCurrency}>
+      onPress={() => onPressNavigateToSingleCurrency(item.code)}>
       {item.currency.toUpperCase()} - {item.mid} PLN
     </Button>
   );
