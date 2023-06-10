@@ -2,8 +2,9 @@
  *
  * CurrencySelect screen to take fetched currencies
  * from API and select currency for calculator.
- * Screen use two navigation params
- *
+ * 
+ * Screen use two navigation params:
+ * 
  * @param {any} data - took data to create list for select
  * @param {(item: ICurrency) => void} setCurrency - setter for
  * select currency from list

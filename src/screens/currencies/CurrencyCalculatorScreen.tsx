@@ -138,7 +138,7 @@ export const CurrencyCalculatorScreen: React.FC = () => {
             {areAllCurrenciesSelected ? (
               <View style={styles.calculationResultWrapper}>
                 {/* Currency no. one */}
-                <View style={styles.calculationResultcurrencyOne}>
+                <View style={styles.calculationResultCurrencyOne}>
                   {/* Currency no. one value input */}
                   <TextInput
                     mode="outlined"
@@ -148,6 +148,7 @@ export const CurrencyCalculatorScreen: React.FC = () => {
                     onChangeText={text => setCurrencyOneValue(text)}
                   />
 
+                  {/* Currency no. one code label */}
                   <Text variant="headlineSmall">{currencyOne?.code}</Text>
                 </View>
 
@@ -160,6 +161,7 @@ export const CurrencyCalculatorScreen: React.FC = () => {
                 </Text>
               </View>
             ) : (
+              /* No selected currencies message */
               <Text
                 variant="headlineSmall"
                 style={styles.noCurrenciesSelectedMessage}>
@@ -230,7 +232,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
   },
-  calculationResultcurrencyOne: {
+  calculationResultCurrencyOne: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

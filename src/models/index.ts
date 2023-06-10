@@ -12,6 +12,11 @@ export interface ICurrency {
   mid: number;
 }
 
+export interface ICurrencyRates {
+  effectiveDate: string;
+  mid: number;
+}
+
 export interface IScreenLayout {
   isLoading?: boolean;
   error?: boolean;
