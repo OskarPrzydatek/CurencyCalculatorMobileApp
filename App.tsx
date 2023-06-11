@@ -8,6 +8,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {CurrencyRoot, GoldRoot} from './src/roots';
 import {DolarIcon, GoldBarIcon} from './src/assets/icons';
 
+// Tab object to create tab navigation
 const Tab = createBottomTabNavigator();
 
 const App: React.FC = () => {
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <PaperProvider>
         <Tab.Navigator
           screenOptions={{
+            // Hide tabbar if keyboard appears
             tabBarHideOnKeyboard: true,
           }}>
           <Tab.Screen

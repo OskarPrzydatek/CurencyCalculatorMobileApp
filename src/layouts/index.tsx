@@ -8,9 +8,10 @@
  */
 import {NativeStackHeaderProps} from '@react-navigation/native-stack';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {ActivityIndicator, Appbar, Text} from 'react-native-paper';
+import {Pressable, StyleSheet, View} from 'react-native';
+import {ActivityIndicator, Appbar, Button, Text} from 'react-native-paper';
 import {IScreenLayout} from '../models';
+import { BackArrowIcon } from '../assets/icons';
 
 /**
  *
@@ -55,14 +56,14 @@ export const ScreenLayout: React.FC<IScreenLayout> = ({
 };
 
 /**
- * 
- * Layout of header used in app made by react-native-paper API 
- * 
+ *
+ * Layout of header used in app made by react-native-paper API
+ *
  * @param navigation - navigation object to get navigation functions
  * @param back - returns true when in root is possibility to go back
- * 
+ *
  * @link https://callstack.github.io/react-native-paper/docs/guides/react-navigation#adding-appbar
- * 
+ *
  */
 export const CustomNavigationBar: React.FC<NativeStackHeaderProps> = ({
   navigation,
@@ -71,7 +72,11 @@ export const CustomNavigationBar: React.FC<NativeStackHeaderProps> = ({
   return (
     <Appbar.Header style={styles.navigationBar}>
       {/* When is possibility to go back - render back arrow */}
-      {back ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
+      {back ? (
+        <Pressable onPress={navigation.goBack}>
+          <BackArrowIcon />
+        </Pressable>
+      ) : null}
     </Appbar.Header>
   );
 };
