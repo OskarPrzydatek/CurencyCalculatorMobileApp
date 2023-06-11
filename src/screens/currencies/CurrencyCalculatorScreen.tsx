@@ -52,18 +52,19 @@ export const CurrencyCalculatorScreen: React.FC = () => {
    *
    * Funtion which calculate currencies values using formula:
    *
-   * currencyTwo = (currencyOneInPolishZloty / currencyTwoInPolishZloty) * currencyOneValue
+   * currencyOne = (currencyOnePLN / currencyTwoPLN) * currencyOneInputValue
    *
    * Confirmation of formula:
-   *  a = 1 in default and is currencyOne input value
+   *  currencyOneInputValue = 1 in default
    *  currencyOne = object (not valued in calculations)
    *  currencyTwo = object (not valued in calculations)
    *
-   *  a * currencyOne = currencyOnePLN
+   *  currencyOneInputValue * currencyOne = currencyOnePLN
    *  currencyTwo = currencyTwoPLN
    *
-   *  a * currencyTwoPLN * currencyOne = currencyTwo * currencyOnePLN
-   *  a * currencyOne = (currencyTwo * currencyOnePLN) / currencyTwoPLN
+   *  currencyOneInputValue * currencyTwoPLN * currencyOne = currencyTwo * currencyOnePLN
+   *  currencyOneInputValue * currencyOne = currencyTwo * (currencyOnePLN / currencyTwoPLN)
+   *  currencyOne = currencyTwo * (currencyOnePLN / currencyTwoPLN) * currencyOneInputValue
    *
    * @returns calculated result of currencies comparison
    *
