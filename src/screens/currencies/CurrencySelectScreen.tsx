@@ -5,9 +5,8 @@
  * 
  * Screen use two navigation params:
  * 
- * @param {any} data - took data to create list for select
- * @param {(item: ICurrency) => void} setCurrency - setter for
- * select currency from list
+ * @param data - took data to create list for select
+ * @param setCurrency - setter for select currency from list
  *
  * After selecting the currency from list we'll back to
  * CalculatorScreen

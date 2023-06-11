@@ -6,7 +6,7 @@
  *
  * Screen use one navigation param:
  *
- * @param {any} code - currency code needed to make
+ * @param code - currency code needed to make
  * API request for single currency data
  *
  * @author Oskar Przydatek

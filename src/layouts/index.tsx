@@ -54,12 +54,23 @@ export const ScreenLayout: React.FC<IScreenLayout> = ({
   return <View style={styles.screenLayout}>{children}</View>;
 };
 
+/**
+ * 
+ * Layout of header used in app made by react-native-paper API 
+ * 
+ * @param navigation - navigation object to get navigation functions
+ * @param back - returns true when in root is possibility to go back
+ * 
+ * @link https://callstack.github.io/react-native-paper/docs/guides/react-navigation#adding-appbar
+ * 
+ */
 export const CustomNavigationBar: React.FC<NativeStackHeaderProps> = ({
   navigation,
   back,
 }: NativeStackHeaderProps) => {
   return (
     <Appbar.Header style={styles.navigationBar}>
+      {/* When is possibility to go back - render back arrow */}
       {back ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
     </Appbar.Header>
   );
