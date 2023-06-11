@@ -54,7 +54,7 @@ export const SingleCurrencyScreen: React.FC = () => {
    * @returns array of mapped date labels
    *
    */
-  const chartLabels = () => {
+  const handleChartLabels = () => {
     if (data) {
       return data.rates.map(
         (currencyRates: ICurrencyRates) =>
@@ -75,7 +75,7 @@ export const SingleCurrencyScreen: React.FC = () => {
    * @returns array of currency values in PLN
    *
    */
-  const chartData = () => {
+  const handleChartData = () => {
     if (data)
       return data.rates.map(
         (currencyRates: ICurrencyRates) => currencyRates.mid,
@@ -123,7 +123,7 @@ export const SingleCurrencyScreen: React.FC = () => {
 
           {/* Currency input value wrapper */}
           <View style={styles.calculationResult}>
-            {/* Currency input value wrapper */}
+            {/* Currency input */}
             <TextInput
               mode="outlined"
               style={styles.currencyInput}
@@ -150,8 +150,8 @@ export const SingleCurrencyScreen: React.FC = () => {
             {/* Chart */}
             <LineChart
               data={{
-                labels: chartLabels(),
-                datasets: [{data: chartData()}],
+                labels: handleChartLabels(),
+                datasets: [{data: handleChartData()}],
               }}
               width={chartWidth}
               height={220}

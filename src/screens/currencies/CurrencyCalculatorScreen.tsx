@@ -166,7 +166,7 @@ export const CurrencyCalculatorScreen: React.FC = () => {
               <Text
                 variant="headlineSmall"
                 style={styles.noCurrenciesSelectedMessage}>
-                Wybierz waluty oraz ich wartości aby zobaczyć kalkulację
+                Wybierz waluty aby zobaczyć kalkulację
               </Text>
             )}
           </View>

@@ -11,7 +11,7 @@ import React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {ActivityIndicator, Appbar, Button, Text} from 'react-native-paper';
 import {IScreenLayout} from '../models';
-import { BackArrowIcon } from '../assets/icons';
+import {BackArrowIcon} from '../assets/icons';
 
 /**
  *
@@ -38,7 +38,7 @@ export const ScreenLayout: React.FC<IScreenLayout> = ({
   if (isLoading)
     return (
       <View style={styles.loadingLayout}>
-        <Text>Loading Currencies</Text>
+        <Text>Ładowanie</Text>
         <ActivityIndicator />
       </View>
     );
@@ -47,7 +47,7 @@ export const ScreenLayout: React.FC<IScreenLayout> = ({
   if (error)
     return (
       <View style={styles.errorLayout}>
-        <Text>Something went wrong. Check internet connection</Text>
+        <Text>Coś poszło nie tak :( Sprawdź połączenie internetowe</Text>
       </View>
     );
 
