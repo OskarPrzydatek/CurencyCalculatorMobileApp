@@ -19,8 +19,13 @@ export interface ICurrencyRates {
 }
 
 export interface IGoldRates {
-  cena: string;
+  cena: number;
   data: string;
+}
+
+export interface IGoldPriceNote {
+  date: string;
+  count: number;
 }
 
 export interface IScreenLayout {
