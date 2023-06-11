@@ -141,6 +141,8 @@ export const GoldAnalizeScreen: React.FC = () => {
   );
 };
 
+// CSS-in-JS styles object created by using ReactNative API
+// to style all elements in gold analize layout
 const styles = StyleSheet.create({
   callednarChartSection: {
     display: 'flex',
