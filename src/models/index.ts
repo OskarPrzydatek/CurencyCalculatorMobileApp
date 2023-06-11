@@ -3,6 +3,7 @@
  * Phasade which exports all models used in app
  *
  * @author Oskar Przydatek
+ * @author Jakub Świderski
  *
  */
 export interface ICurrency {
@@ -15,6 +16,11 @@ export interface ICurrency {
 export interface ICurrencyRates {
   effectiveDate: string;
   mid: number;
+}
+
+export interface IGoldRates {
+  cena: string;
+  data: string;
 }
 
 export interface IScreenLayout {
