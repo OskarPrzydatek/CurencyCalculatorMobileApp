@@ -1,9 +1,6 @@
 /**
  *
  * Testsheet for CurrencyCalculator screen.
- * 
- * @ts-ignore adnotation was used because typescript has
- * problem to implement mock functions for hooks
  *
  * @author Oskar Przydatek
  *
@@ -26,9 +23,11 @@ jest.mock('../../api', () => ({
 }));
 
 describe('CurrencyCalculatorScreen', () => {
+  const mockUseNavigation = useNavigation as jest.Mock;
+  const mockUseSWR = useSWR as jest.Mock;
+
   beforeEach(() => {
-    // @ts-ignore
-    useNavigation.mockReturnValue({
+    mockUseNavigation.mockReturnValue({
       navigate: jest.fn(),
     });
   });
@@ -38,8 +37,7 @@ describe('CurrencyCalculatorScreen', () => {
   });
 
   test('renders currency list button', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [],
       error: null,
       isLoading: false,
@@ -49,8 +47,7 @@ describe('CurrencyCalculatorScreen', () => {
   });
 
   test('navigates to currency list screen when currency list button is pressed', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [],
       error: null,
       isLoading: false,
@@ -61,8 +58,7 @@ describe('CurrencyCalculatorScreen', () => {
   });
 
   test('renders currency one button', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [],
       error: null,
       isLoading: false,
@@ -72,8 +68,7 @@ describe('CurrencyCalculatorScreen', () => {
   });
 
   test('renders currency two button', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [],
       error: null,
       isLoading: false,
@@ -83,8 +78,7 @@ describe('CurrencyCalculatorScreen', () => {
   });
 
   test('renders swap currencies button', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [],
       error: null,
       isLoading: false,
@@ -94,8 +88,7 @@ describe('CurrencyCalculatorScreen', () => {
   });
 
   test('renders reset calculator button', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [],
       error: null,
       isLoading: false,

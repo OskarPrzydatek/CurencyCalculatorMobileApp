@@ -2,9 +2,6 @@
  *
  * Testsheet for CurrencySelect screen.
  * 
- * @ts-ignore adnotation was used because typescript has
- * problem to implement mock functions for hooks
- *
  * @author Oskar Przydatek
  *
  */
@@ -20,14 +17,15 @@ jest.mock('@react-navigation/native', () => ({
 }));
 
 describe('CurrencySelectScreen', () => {
+  const mockUseNavigation = useNavigation as jest.Mock;
+  const mockUseRoute = useRoute as jest.Mock;
+
   beforeEach(() => {
-    // @ts-ignore
-    useNavigation.mockReturnValue({
+    mockUseNavigation.mockReturnValue({
       goBack: jest.fn(),
     });
 
-    // @ts-ignore
-    useRoute.mockReturnValue({
+    mockUseRoute.mockReturnValue({
       params: {
         data: [
           {code: 'USD', currency: 'US Dollar'},
@@ -52,8 +50,7 @@ describe('CurrencySelectScreen', () => {
 
   test('calls setCurrency and navigates back when a currency button is pressed', () => {
     const setCurrency = jest.fn();
-    // @ts-ignore
-    useRoute.mockReturnValueOnce({
+    mockUseRoute.mockReturnValueOnce({
       params: {
         data: [{code: 'USD', currency: 'US Dollar'}],
         setCurrency,
