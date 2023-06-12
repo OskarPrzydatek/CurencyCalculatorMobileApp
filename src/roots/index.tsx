@@ -1,10 +1,10 @@
 /**
- * 
+ *
  * Routing roots phasade which exports all navigation
  * roots needed in app.
- * 
+ *
  * @author Jakub Świderski
- * 
+ *
  */
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {CurrencyCalculatorScreen} from '../screens/currencies/CurrencyCalculatorScreen';
