@@ -130,6 +130,7 @@ export const SingleCurrencyScreen: React.FC = () => {
               keyboardType="numeric"
               value={currencyValue}
               onChangeText={text => setCurrencyValue(text)}
+              testID="currency-input"
             />
 
             {/* Currency code label */}
