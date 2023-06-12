@@ -133,6 +133,7 @@ export const GoldCalculatorScreen: React.FC = () => {
               keyboardType="numeric"
               value={goldValue}
               onChangeText={text => setGoldValue(text)}
+              testID="gold-value-input"
             />
 
             {/* Gold grams label */}
