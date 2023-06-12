@@ -2,9 +2,6 @@
  *
  * Testsheet for CurrencyList screen.
  *
- * @ts-ignore adnotation was used because typescript has
- * problem to implement mock functions for hooks
- *
  * @author Oskar Przydatek
  *
  */
@@ -26,9 +23,11 @@ jest.mock('../../api', () => ({
 }));
 
 describe('CurrenciesListScreen', () => {
+  const mockUseNavigation = useNavigation as jest.Mock;
+  const mockUseSWR = useSWR as jest.Mock;
+
   beforeEach(() => {
-    // @ts-ignore
-    useNavigation.mockReturnValue({
+    mockUseNavigation.mockReturnValue({
       navigate: jest.fn(),
     });
   });
@@ -38,8 +37,7 @@ describe('CurrenciesListScreen', () => {
   });
 
   test('renders currency list correctly when data is available', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [{rates: [{code: 'USD', currency: 'US Dollar', mid: 3.75}]}],
       error: null,
       isLoading: false,
@@ -49,8 +47,7 @@ describe('CurrenciesListScreen', () => {
   });
 
   test('navigates to SingleCurrency screen when a currency button is pressed', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [{rates: [{code: 'USD', currency: 'US Dollar', mid: 3.75}]}],
       error: null,
       isLoading: false,
@@ -63,8 +60,7 @@ describe('CurrenciesListScreen', () => {
   });
 
   test('does not render currency list when data is null', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: null,
       error: null,
       isLoading: false,
@@ -74,8 +70,7 @@ describe('CurrenciesListScreen', () => {
   });
 
   test('does not render currency list when loading', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [{rates: [{code: 'USD', currency: 'US Dollar', mid: 3.75}]}],
       error: null,
       isLoading: true,
@@ -85,8 +80,7 @@ describe('CurrenciesListScreen', () => {
   });
 
   test('does not render currency list when there is an error', () => {
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: [{rates: [{code: 'USD', currency: 'US Dollar', mid: 3.75}]}],
       error: 'API error',
       isLoading: false,

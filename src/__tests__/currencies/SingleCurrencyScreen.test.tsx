@@ -2,9 +2,6 @@
  *
  * Testsheet for SingleCurrency screen.
  *
- * @ts-ignore adnotation was used because typescript has
- * problem to implement mock functions for hooks
- *
  * @author Oskar Przydatek
  *
  */
@@ -26,16 +23,17 @@ jest.mock('../../api', () => ({
 }));
 
 describe('SingleCurrencyScreen', () => {
+  const mockUseRoute = useRoute as jest.Mock;
+  const mockUseSWR = useSWR as jest.Mock;
+
   beforeEach(() => {
-    // @ts-ignore
-    useRoute.mockReturnValue({
+    mockUseRoute.mockReturnValue({
       params: {
         code: 'USD',
       },
     });
 
-    // @ts-ignore
-    useSWR.mockReturnValue({
+    mockUseSWR.mockReturnValue({
       data: {
         currency: 'US Dollar',
         code: 'USD',
