@@ -16,7 +16,7 @@ import {getDataFetcher} from '../../api';
 import {LogBox, StyleSheet, View} from 'react-native';
 import {ICurrency} from '../../models';
 
-// Ignore warning for passing callbacks 
+// Ignore warning for passing callbacks
 // in navigation functions. We can accept it
 LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state',
@@ -135,7 +135,8 @@ export const CurrencyCalculatorScreen: React.FC = () => {
           <Button
             style={styles.currencyListButton}
             mode="contained"
-            onPress={onPressNavigateToCurrenciesList}>
+            onPress={onPressNavigateToCurrenciesList}
+            testID="currency-list-button">
             Waluty
           </Button>
 
@@ -153,6 +154,7 @@ export const CurrencyCalculatorScreen: React.FC = () => {
                     keyboardType="numeric"
                     value={currencyOneValue}
                     onChangeText={text => setCurrencyOneValue(text)}
+                    testID="currency-one-input"
                   />
 
                   {/* Currency no. one code label */}
@@ -189,14 +191,16 @@ export const CurrencyCalculatorScreen: React.FC = () => {
                 {/* Cyrrency no. one select button */}
                 <Button
                   mode="outlined"
-                  onPress={onPressNavigateToSelectCyrrencyOne}>
+                  onPress={onPressNavigateToSelectCyrrencyOne}
+                  testID="currency-one-button">
                   {currencyOneButtonLabel}
                 </Button>
 
                 {/* Cyrrency no. two select button */}
                 <Button
                   mode="outlined"
-                  onPress={onPressNavigateToSelectCyrrencyTwo}>
+                  onPress={onPressNavigateToSelectCyrrencyTwo}
+                  testID="currency-two-button">
                   {currencyTwoButtonLabel}
                 </Button>
               </View>
