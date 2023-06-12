@@ -13,8 +13,14 @@ import {useNavigation} from '@react-navigation/native';
 import {ScreenLayout} from '../../layouts';
 import useSWR from 'swr';
 import {getDataFetcher} from '../../api';
-import {StyleSheet, View} from 'react-native';
+import {LogBox, StyleSheet, View} from 'react-native';
 import {ICurrency} from '../../models';
+
+// Ignore warning for passing callbacks 
+// in navigation functions. We can accept it
+LogBox.ignoreLogs([
+  'Non-serializable values were found in the navigation state',
+]);
 
 export const CurrencyCalculatorScreen: React.FC = () => {
   // Hook to use navigation functions
